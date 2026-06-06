@@ -233,3 +233,198 @@ footer {
         font-size: 32px;
     }
 }
+
+/* --- Estilos del Formulario de Citas --- */
+.form-section {
+    padding: 60px 20px;
+    background-color: #f1f5f9;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-container h2 {
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    color: #64748b;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 14px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #334155;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #10b981; /* Verde para acciones positivas */
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #059669;
+}
+
+.btn-submit:disabled {
+    background-color: #a7f3d0;
+    cursor: not-allowed;
+}
+
+/* Mensajes de éxito */
+.mensaje-oculto {
+    display: none;
+}
+
+.mensaje-visible {
+    display: block;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d1fae5;
+    color: #065f46;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+nav ul li a.active {
+    color: #0ea5e9;
+    border-bottom: 2px solid #0ea5e9;
+}
+/* --- Estilos de la Tienda de Productos --- */
+.tienda-section {
+    padding: 60px 0;
+    background-color: #f8fafc;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.cargando {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #64748b;
+    font-size: 18px;
+}
+
+/* Estilo individual de la Card */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Corta las esquinas de la imagen si sobresale */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 200px;
+    background-color: #f1f5f9;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio de forma proporcional */
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el botón siempre hacia abajo si hay textos largos */
+}
+
+.product-id {
+    font-size: 11px;
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Botón de la Card */
+.btn-interes {
+    display: block;
+    text-align: center;
+    background-color: #25d366; /* Verde de WhatsApp */
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-interes:hover {
+    background-color: #128c7e;
+}
