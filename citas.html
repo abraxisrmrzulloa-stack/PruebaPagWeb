@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cita de Corte de Pelo - Veterinaria Valtierra</title>
+    <meta name="description" content="Agenda tu cita en Clínica Veterinaria para consultas médicas, vacunación, estética y diagnóstico. ¡Atención rápida y profesional!">
+    <title>Agendar Cita - Clínica Veterinaria</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,55 +13,102 @@
 
     <header>
         <div class="container navbar">
-            <div class="logo"><i class="fas fa-paw"></i> Veterinaria Valtierra</div>
+            <div class="logo"><i class="fas fa-paw"></i> Veterinaria</div>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="citas.html" class="active">Cita de corte de pelo</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
+                    <li><a href="citas.html" class="active">Citas</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
                 </ul>
             </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
     <section class="form-section">
         <div class="form-container">
-            <h2>Agendar Cita para Estética</h2>
-            <p>Llena los datos para apartar el baño o corte de pelo de tu mascota.</p>
-            
+            <h2><i class="fas fa-calendar-check"></i> Agendar Cita</h2>
+            <p>Llena los datos y nos comunicaremos contigo para confirmar tu cita.</p>
+
             <form id="appointmentForm">
                 <div class="form-group">
                     <label for="propietario">Nombre del Dueño:</label>
-                    <input type="text" id="propietario" required>
+                    <input type="text" id="propietario" name="propietario" placeholder="Ej. Juan García" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="mascota">Nombre de la Mascota:</label>
-                    <input type="text" id="mascota" required>
+                    <input type="text" id="mascota" name="mascota" placeholder="Ej. Max" required>
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Teléfono de Contacto:</label>
-                    <input type="tel" id="telefono" required>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. +52 123 456 7890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Tipo de Servicio:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="" disabled selected>Selecciona un servicio...</option>
+                        <option value="Consulta Médica">🩺 Consulta Médica</option>
+                        <option value="Vacunación / Desparasitación">💉 Vacunación / Desparasitación</option>
+                        <option value="Estética y Baño">🐶 Estética y Baño</option>
+                        <option value="Rayos X y Diagnóstico">🔬 Rayos X y Diagnóstico</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="fecha">Fecha y Hora sugerida:</label>
-                    <input type="datetime-local" id="fecha" required>
+                    <input type="datetime-local" id="fecha" name="fecha" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="notas">Notas o preferencias del corte:</label>
-                    <textarea id="notas" rows="3" placeholder="Ej. Corte tipo cachorro, baño medicado..."></textarea>
+                    <label for="notas">Notas o preferencias:</label>
+                    <textarea id="notas" name="notas" rows="3" placeholder="Ej. Corte tipo cachorro, vacuna antirrábica, primera consulta..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-submit">Enviar Solicitud</button>
             </form>
-            
+
             <div id="mensajeExito" class="mensaje-oculto">
                 <i class="fas fa-check-circle"></i> ¡Cita registrada con éxito! Nos comunicaremos contigo para confirmar.
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><i class="fas fa-paw"></i> Veterinaria</div>
+                <p>Cuidando a tus mascotas con amor y profesionalismo desde 2015.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/521234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Clínica Veterinaria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="js.js"></script>
 </body>
