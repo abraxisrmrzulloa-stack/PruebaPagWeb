@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Veterinaria Valtierra</title>
+    <meta name="description" content="Clínica Veterinaria — Consultas médicas, vacunación, estética y diagnóstico para tus mascotas. ¡Agenda tu cita hoy!">
+    <title>Clínica Veterinaria</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,36 +14,39 @@
     <header>
         <div class="container navbar">
             <div class="logo">
-                <i class="fas fa-paw"></i> Veterinaria Valtierra
+                <i class="fas fa-paw"></i> Veterinaria
             </div>
             <nav>
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="citas.html">Cita de corte de pelo</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="tienda.html">Tienda</a></li>
-
-    </ul>
-</nav>
+                <ul id="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-content">
-    <h1>Cuidamos a quien más amas</h1>
-    <p>En Clínica Veterinaria Valtierra ofrecemos la mejor atención médica y estética para que tu compañero de vida siempre esté sano y feliz.</p>
-    <a href="citas.html" class="btn-primary">Agendar Cita</a>
-</div>
+            <h1>Cuidamos a quien más amas</h1>
+            <p>En Clínica Veterinaria ofrecemos la mejor atención médica y estética para que tu compañero de vida siempre esté sano y feliz.</p>
+            <a href="citas.html" class="btn-primary">Agendar Cita</a>
+        </div>
     </section>
 
     <section id="servicios" class="services-section">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
-                
+
                 <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-stethoscopes"></i></div>
+                    <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
                     <h3>Consultas Médicas</h3>
                     <p>Revisiones generales, diagnóstico temprano y planes de salud preventivos para mantener a tu mascota al 100%.</p>
                 </div>
@@ -68,6 +73,56 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: SOBRE NOSOTROS -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h3>Tu confianza es nuestra prioridad</h3>
+                    <p>Somos una clínica veterinaria con más de <strong>10 años de experiencia</strong> cuidando la salud y el bienestar de las mascotas de nuestra comunidad. Nuestro equipo de médicos y especialistas trabaja con pasión y profesionalismo para brindarte la mejor atención.</p>
+                    <p>Creemos que las mascotas son parte de la familia, y merecen el mismo nivel de cuidado y amor que cualquier integrante del hogar.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2,000+</span>
+                            <span class="stat-label">Pacientes atendidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Especialistas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Trato con amor</h4>
+                        <p>Tratamos a cada mascota como si fuera nuestra.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Equipo moderno</h4>
+                        <p>Tecnología de diagnóstico de última generación.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-user-md"></i>
+                        <h4>Veterinarios certificados</h4>
+                        <p>Profesionales con formación continua y especializada.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Atención oportuna</h4>
+                        <p>Horarios amplios para atenderte cuando más lo necesitas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="contact-section">
         <div class="container">
             <h2 class="section-title">Contacto e Ubicación</h2>
@@ -79,21 +134,57 @@
                         <li><i class="fas fa-map-marker-alt"></i> Av. Principal #123, Tu Ciudad</li>
                         <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
                         <li><i class="fas fa-clock"></i> Lun - Sáb: 9:00 AM - 7:00 PM</li>
+                        <li><i class="fas fa-envelope"></i> contacto@clinicaveterinaria.com</li>
                     </ul>
+                    <a href="citas.html" class="btn-primary btn-contact">Agendar Cita Ahora</a>
                 </div>
-                <div class="contact-box">
-                    <h3>Horarios de Atención</h3>
-                    <p>Si tienes una urgencia o quieres asegurar tu lugar para un baño o consulta, no dudes en marcarnos directamente por teléfono.</p>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.2!2d-99.1332!3d19.4326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMDcnNTkuNiJX!5e0!3m2!1ses!2smx!4v1234567890"
+                        width="100%"
+                        height="300"
+                        style="border:0; border-radius: 12px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de la Clínica Veterinaria">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Clínica Veterinaria Valtierra. Todos los derechos reservados.</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><i class="fas fa-paw"></i> Veterinaria</div>
+                <p>Cuidando a tus mascotas con amor y profesionalismo desde 2015.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/521234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="footer-phone"><i class="fas fa-phone"></i> +52 123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Clínica Veterinaria. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script src="js.js"></script>
 </body>
 </html>
