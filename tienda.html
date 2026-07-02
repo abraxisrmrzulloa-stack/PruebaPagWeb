@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Veterinaria Valtierra</title>
+    <meta name="description" content="Tienda veterinaria en línea. Encuentra los mejores productos, alimentos y accesorios para tu mascota con envío a domicilio.">
+    <title>Tienda Pet - Clínica Veterinaria</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,27 +13,129 @@
 
     <header>
         <div class="container navbar">
-            <div class="logo"><i class="fas fa-paw"></i> Veterinaria Valtierra</div>
+            <div class="logo"><i class="fas fa-paw"></i> Veterinaria</div>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html" class="active">Productos</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="citas.html">Citas</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="tienda.html" class="active">Tienda</a></li>
                 </ul>
             </nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
     <section class="tienda-section">
         <div class="container">
-            <h2 class="section-title">Nuestra Tienda Pet</h2>
-            <p style="text-align: center; color: #64748b; margin-bottom: 40px;">Encuentra los mejores accesorios y alimento para tu mascota.</p>
-            
+            <h1 class="section-title">Nuestra Tienda Pet</h1>
+            <p style="text-align: center; color: #64748b; margin-bottom: 30px;">Encuentra los mejores accesorios y alimento para tu mascota.</p>
+
+            <!-- Barra de búsqueda y filtros -->
+            <div class="tienda-controles">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input
+                        type="text"
+                        id="buscador-productos"
+                        placeholder="Buscar producto por nombre o descripción..."
+                        autocomplete="off"
+                    >
+                    <button id="btn-limpiar-busqueda" class="btn-limpiar" aria-label="Limpiar búsqueda" style="display:none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="filtros-categoria" class="filtros-categoria">
+                    <!-- Los botones de categoría se generan dinámicamente con JS -->
+                </div>
+            </div>
+
+            <!-- Contador de resultados -->
+            <p id="contador-resultados" class="contador-resultados" style="display:none;"></p>
+
+            <!-- Grid de productos -->
             <div id="contenedor-productos" class="productos-grid">
-                <p class="cargando">Cargando productos de la tienda...</p>
+                <p class="cargando"><i class="fas fa-spinner fa-spin"></i> Cargando productos de la tienda...</p>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><i class="fas fa-paw"></i> Veterinaria</div>
+                <p>Cuidando a tus mascotas con amor y profesionalismo desde 2015.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/521234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Clínica Veterinaria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL DE PRODUCTO ===== -->
+    <div id="producto-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-nombre" style="display:none;">
+        <div class="modal-box">
+
+            <!-- Botón cerrar -->
+            <button class="modal-cerrar" id="btn-cerrar-modal" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Carrusel de imágenes -->
+            <div class="modal-carrusel">
+                <div class="carrusel-track" id="carrusel-track">
+                    <!-- Las imágenes se insertan dinámicamente -->
+                </div>
+
+                <!-- Flechas -->
+                <button class="carrusel-btn carrusel-prev" id="carrusel-prev" aria-label="Imagen anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carrusel-btn carrusel-next" id="carrusel-next" aria-label="Imagen siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicadores (dots) -->
+                <div class="carrusel-dots" id="carrusel-dots"></div>
+            </div>
+
+            <!-- Información del producto -->
+            <div class="modal-info">
+                <div class="modal-meta">
+                    <span class="product-id" id="modal-id"></span>
+                    <span class="product-tag" id="modal-categoria" style="display:none;"></span>
+                </div>
+                <h2 id="modal-nombre"></h2>
+                <p id="modal-descripcion"></p>
+                <a id="modal-whatsapp" href="#" class="btn-interes modal-wa" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Preguntar por WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- ===== FIN MODAL ===== -->
 
     <script src="js.js"></script>
 </body>
